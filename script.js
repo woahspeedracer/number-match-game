@@ -80,11 +80,40 @@ const images = [
       number_of_items: 8,
     },
 ];
+let timerRef;
 
-const randomNumber = Math.floor(Math.random() * images.length);
-const randomImageName = images[randomNumber].image_name;
-const imageContainer = document.getElementById('imageContainer');
+const generate = () => {
+    if (images.length === 0) {
+        stopTimer();
+        return;
+    }
+    const randomNumber = Math.floor(Math.random() * images.length);
+    const randomImageName = images[randomNumber].image_name;
+    const imageContainer = document.getElementById('imageContainer');
+    
+    if (imageContainer.hasChildNodes()) {
+        imageContainer.removeChild(imageContainer.firstElementChild); 
+    }
+    const image = document.createElement('img');
+    image.src = `images/${randomImageName}`;
+    imageContainer.appendChild(image);
+    images.splice(randomNumber, 1);
 
-const image = document.createElement('img');
-image.src = `images/${randomImageName}`;
-imageContainer.appendChild(image);
+};
+
+
+const timer = () => {
+    timerRef = setInterval(generate, 200);
+    console.log('timer started');
+};
+
+const play = () => {
+    const welcome = document.getElementById('startScreen');
+    welcome.style.display = 'none';
+    generate();
+    timer();
+};
+
+const stopTimer = () => {
+    clearInterval(timerRef);
+}
