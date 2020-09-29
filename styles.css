@@ -1,0 +1,97 @@
+html {
+    font-size: 10px;
+    color: #212560;
+}
+
+#game-area {
+    font-size: 1.6rem;
+    padding-top: 3rem;
+}
+
+.imageArea, 
+.stats {
+    min-height: 30vh;
+}
+
+.imageArea {
+    background: linear-gradient(45deg, #859ede, #6965de);
+    border-radius: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 3rem;
+    transform: translate(0, -3rem);
+}
+
+h1 {
+    margin-top: 0;
+    font-size: 2.4rem;
+}
+
+h3 {
+    margin-top: 0;
+    font-size: 2rem;
+}
+
+.items {
+    font-size: 2rem;
+}
+
+button {
+    width: 8rem;
+    border: none;
+    border-radius: 3rem;
+    padding: 1rem;
+    background: transparent;
+    border: 2px solid #a1e0e4;
+    cursor: pointer;
+}
+
+button:nth-child(2) {
+    border: 2px solid rgb(241, 152, 152);
+}
+
+.stats {
+    background: whitesmoke;
+    border: solid 2px #859ede;
+    border-radius: 3rem 3rem 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem 0;
+    text-align: center;
+    padding-bottom: 3rem;
+}
+
+.space-y {
+    margin: 3rem 0;
+}
+
+img {
+    width: 100%;
+    border-radius: 3rem;
+    margin-bottom: 2rem;
+}
+
+@media all and (min-width: 632px) {
+    #game-area {
+        display: flex;
+    }
+    .stats, 
+    .imageArea {
+        min-height: 50vh;
+    }
+
+    .stats {
+        border-radius: 3rem 0 0 3rem;
+        flex: 1;
+        margin-left: 3rem;
+        padding-right: 3rem;
+    }
+
+    .imageArea {
+        border-radius: 3rem;
+        flex: 2;
+        transform: translate(-3rem);
+    }
+}
